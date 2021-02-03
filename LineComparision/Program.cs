@@ -33,23 +33,37 @@ namespace LineComparision
             b = bValue;
         }
 
-        public double calculateLength()
+        public double CalculateLength()
         {
             return Math.Sqrt(Math.Pow(a.x - b.x, 2) + Math.Pow(a.y - b.y, 2)); ;
+        }
+
+        public void Compare(Line l1)
+        {
+            if (l1.CalculateLength() == this.CalculateLength())
+                Console.WriteLine("Lines are equal");
+            else
+                Console.WriteLine("Lines are not equal");
         }
     }
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to line comparison computation");
+            Console.WriteLine("Welcome to line comparision computation");
 
             Point a = new Point(3, 2);
             Point b = new Point(3, 5);
             Line l = new Line(a, b);
 
-            Console.WriteLine("Length of line l: " + l.calculateLength());
+            Console.WriteLine("Length of line l: " + l.CalculateLength());
 
+            Point a1 = new Point(3, 2);
+            Point b1 = new Point(3, 5);
+            Line l1 = new Line(a1, b1);
+
+            Console.WriteLine("Length of line l1: " + l1.CalculateLength());
+            l.Compare(l1);
         }
     }
 }
