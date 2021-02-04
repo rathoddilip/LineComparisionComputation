@@ -64,7 +64,7 @@ namespace LineComparision
         {
             Console.WriteLine("Welcome to line comparision computation");
 
-            Point a = new Point(3, 2);
+            Point a = new Point(3, 2);//called the constructor
             Point b = new Point(3, 5);
             Line l = new Line(a, b);
 
